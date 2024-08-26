@@ -644,7 +644,7 @@ textarea{
 
 .booked {
     background-color: grey;
-    pointer-events: none; /* Disable clicking */
+    pointer-events: none;
 }
 
 #dateSelection, h1{
