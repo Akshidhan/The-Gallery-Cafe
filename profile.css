@@ -1,0 +1,157 @@
+.info {
+    background: rgb(84, 51, 16);
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.container {
+    margin-inline: 10%;
+}
+
+.username {
+    margin: 20px 0;
+}
+
+.username * {
+    display: inline;
+}
+
+.username span {
+    color: rgb(253, 166, 137);
+    font-size: 1.2rem;
+}
+
+.username p {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.info h1 {
+    text-align: center;
+}
+
+.info img {
+    display: block;
+    margin-inline: auto;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.optionButton {
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: antiquewhite;
+    cursor: pointer;
+    width: 100%;
+}
+
+.history {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th, td {
+    text-align: right;
+    padding: 5px;
+}
+
+.data {
+    background: rgb(253, 166, 137);
+    padding: 5px;
+    overflow: hidden;
+}
+
+.data td:first-child {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.data td:last-child {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+form {
+    background: #c97a7a;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 5px;
+}
+
+form input[type='button'] , button{
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #582c2c;
+    cursor: pointer;
+}
+
+#changePWDiv {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+#delAccConfirmation{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.content{
+    background: #c97a7a;
+    padding: 10%;
+    font-size: 1.2rem;
+    border-radius: 20px;
+}
+
+.content p{
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.buttons button{
+    font-size: 1.2rem;
+    padding-inline: 15px;
+    color: #d3b9b9;;
+}

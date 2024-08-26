@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Gallery Cafe</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="loginStyles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+HR:wght@100..400&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="loginLogo"><a href="index.php"><div class="logo">
+            <img src="assets/logo-white.png" alt="logo">
+            <p>The<br>gallery<br>Cafe</p>
+        </div></a></div>
+        <div class="container">
+            <div id="signUp" class="loginForm">
+                <h2>Sign Up</h2>
+                <form id="form" class="login" action="signUp.php" method="post">
+                    <div class="usernametf">
+                        <label for="username">Username</label><br>
+                        <input type="text" id="name" name="username">
+                    </div>
+                    <div class="passwordtf">
+                        <label for="password">Password</label><br>
+                        <input type="password" id="pass" name="password"><br>
+                    </div>
+                    <div class="passwordconfirm">
+                        <label for="confirmPassword">Confirm Password</label><br>
+                        <input type="password" id="confirmPassword"><br>
+                    </div>
+                    <div class="loginbtn">
+                        <button type="submit" id="signupbtn" name="signUp">Sign Up</button>
+                    </div>
+                </form>
+                <a href="signIn.html" id="signUp">Have an account?</a>
+            </div>
+        </div>
+        <script src="signUp.js"></script>
+    </body>
+    </html>
