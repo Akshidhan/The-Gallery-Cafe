@@ -44,7 +44,6 @@
             <?php
             include 'connect.php';
 
-            // Fetch users
             $sql = "SELECT * FROM users";
             $result = $conn->query($sql);
 
@@ -100,7 +99,6 @@
         <?php
             include 'connect.php';
 
-            // Fetch menu items
             $sql = "SELECT * FROM menu";
             $result = $conn->query($sql);
 
@@ -162,7 +160,6 @@
     </form>    
 
     <?php
-        // Logic for adding users
         if (isset($_POST['add_user'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -173,7 +170,7 @@
                 echo "<script>
                         setTimeout(function() {
                             window.location.href = '" . $_SERVER['PHP_SELF'] . "';
-                        }, 2000); // 2-second delay
+                        }, 2000);
                     </script>";
                 exit();
             } else {
@@ -181,7 +178,6 @@
             }
         }
 
-        // Logic for deleting users
         if (isset($_POST['delete_user_id'])) {
             $userId = $_POST['delete_user_id'];
 
@@ -190,7 +186,7 @@
                 echo "<script>
                         setTimeout(function() {
                             window.location.href = '" . $_SERVER['PHP_SELF'] . "';
-                        }, 2000); // 2-second delay
+                        }, 2000);
                     </script>";
                 exit();
             } else {
@@ -198,7 +194,6 @@
             }
         }
 
-        // Logic for adding a dish
         if (isset($_POST['add_item'])) {
             $cuisine = $_POST['cuisine'];
             $name = $_POST['name'];
@@ -206,13 +201,11 @@
             $description = $_POST['description'];
             $price = $_POST['price'];
 
-            // Handling file upload
             $target_dir = "assets/menu/";
             $target_file = $target_dir . basename($_FILES["image"]["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-            
-            // Check if image file is an actual image
+
             $check = getimagesize($_FILES["image"]["tmp_name"]);
             if($check !== false) {
                 $uploadOk = 1;
@@ -220,25 +213,19 @@
                 echo "File is not an image.";
                 $uploadOk = 0;
             }
-
-            // Check if file already exists
             if (file_exists($target_file)) {
                 echo "Sorry, file already exists.";
                 $uploadOk = 0;
             }
-
-            // Allow certain file formats
+            
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
                 echo "Sorry, only JPG, JPEG, & PNG files are allowed.";
                 $uploadOk = 0;
             }
-
-            // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
                 echo "Sorry, your file was not uploaded.";
             } else {
                 if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                    // Insert dish details into the database
                     $stmt = $conn->prepare("INSERT INTO menu (cuisine, name, category, description, price, imgsrc) VALUES (?, ?, ?, ?, ?, ?)");
                     $stmt->bind_param("ssssss", $cuisine, $name, $category, $description, $price, $target_file);
 
