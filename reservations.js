@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let selectedDishes = [];
     let total = 0;
 
-    // Get userId from data attribute
     const userId = document.querySelector('script[data-user-id]').getAttribute('data-user-id');
 
     reservationDateInput.addEventListener('change', function() {
@@ -38,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     if (data.bookedTables.includes(tableId)) {
                         tableDiv.classList.add('booked');
-                        tableDiv.style.pointerEvents = 'none'; // Disable click
-                        tableDiv.style.opacity = '0.5'; // Visual indication of being disabled
+                        tableDiv.style.pointerEvents = 'none';
+                        tableDiv.style.opacity = '0.5';
                     } else {
                         tableDiv.addEventListener('click', function() {
                             document.querySelectorAll('.table').forEach(t => t.classList.remove('selected'));
@@ -96,8 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
             tableId: selectedTableId,
             dishes: selectedDishes.map(dish => dish.name).join(', '),
             total: total,
-            userId: userId,  // Use userId from the script attribute
-            time: new Date().toLocaleTimeString('en-GB'),  // 24-hour format
+            userId: userId,
+            time: new Date().toLocaleTimeString('en-GB'),
             date: reservationDateInput.value
         };
 
