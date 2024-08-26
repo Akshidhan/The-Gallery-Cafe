@@ -5,7 +5,6 @@ session_start();
 if (isset($_GET['date'])) {
     $date = $_GET['date'];
 
-    // Prepare and execute the query to get booked tables
     $query = "SELECT tables FROM reservations WHERE date = ? AND confirmation != 'cancelled'";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $date);
@@ -20,7 +19,6 @@ if (isset($_GET['date'])) {
     $stmt->close();
     $conn->close();
 
-    // Return the booked tables as JSON
     header('Content-Type: application/json');
     echo json_encode(['bookedTables' => $bookedTables]);
 } else {
